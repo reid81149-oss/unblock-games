@@ -4,7 +4,7 @@ A fun collection of unblocked games that you can play directly in your browser! 
 
 ## 🎯 Features
 
-- **Multiple Games**: Snake, Flappy Bird, 2048, and more coming soon!
+- **Multiple Games**: Snake, Flappy Bird, 2048, FNAF World, and more coming soon!
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
 - **Search Functionality**: Easily find your favorite games
 - **Score Tracking**: Keep track of your high scores
@@ -30,6 +30,21 @@ Slide tiles and combine numbers to reach the 2048 tile.
 - **Controls**: Arrow Keys or WASD to move tiles
 - **Goal**: Combine tiles with the same number to create larger ones
 - **Scoring**: Combine tiles strategically to reach 2048
+
+### FNAF World 🤖
+Five Nights at Freddy's - Strategy RPG Battle Game
+- **Controls**: 
+  - Press `1-3` to select your character (Freddy, Bonnie, or Chica)
+  - Press `A` to Attack enemies
+  - Press `D` to Defend (boost defense temporarily)
+  - Press `H` to Heal your character
+  - Press `SPACE` to start battles
+- **Goal**: Defeat all enemies in each level
+- **Features**: 
+  - Progressive difficulty with increasing levels
+  - Character HP and stat system
+  - Strategic turn-based combat
+  - Score multiplier based on level
 
 ## 🚀 Quick Start
 
@@ -68,7 +83,8 @@ unblock-games/
 │   └── games/
 │       ├── snake.js       # Snake game implementation
 │       ├── flappy.js      # Flappy Bird game implementation
-│       └── twentyfortyeight.js  # 2048 game implementation
+│       ├── twentyfortyeight.js  # 2048 game implementation
+│       └── fnafworld.js   # FNAF World game implementation
 └── README.md              # This file
 ```
 
@@ -136,7 +152,6 @@ Found a bug? Want to add a new game? Contributions are welcome!
 
 ## 💡 Upcoming Features
 
-- [ ] FNAF World game
 - [ ] Tetris
 - [ ] Pac-Man
 - [ ] Tic-Tac-Toe
@@ -144,6 +159,7 @@ Found a bug? Want to add a new game? Contributions are welcome!
 - [ ] Sound effects and music
 - [ ] More difficulty levels
 - [ ] Multiplayer games
+- [ ] Game themes/skins
 
 ## 📧 Support
 
