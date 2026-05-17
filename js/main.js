@@ -49,6 +49,20 @@ const games = [
             'Defeat all enemies to win!',
             'Each level gets progressively harder'
         ]
+    },
+    {
+        id: 'roblox',
+        name: 'Roblox Tycoon',
+        icon: '💼',
+        description: 'Build your business empire and become a tycoon!',
+        instructions: [
+            'Click on businesses (🏢) to buy them and earn income',
+            'Click on upgrades (⭐) to improve your businesses',
+            'Press SPACE to tap for coins manually',
+            'Earn money passively from your businesses',
+            'Buy better businesses as you progress',
+            'Level up by earning more score!'
+        ]
     }
 ];
 
@@ -57,6 +71,7 @@ let snakeGame = null;
 let flappyGame = null;
 let game2048 = null;
 let fnafWorldGame = null;
+let robloxGame = null;
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -117,6 +132,8 @@ function openGame(gameId) {
         render2048();
     } else if (gameId === 'fnafworld') {
         fnafWorldGame = new FNAFWorldGame('gameCanvas');
+    } else if (gameId === 'roblox') {
+        robloxGame = new RobloxTycoonGame('gameCanvas');
     }
     
     modal.style.display = 'block';
@@ -132,6 +149,8 @@ function startCurrentGame() {
         render2048();
     } else if (currentGame.id === 'fnafworld' && fnafWorldGame) {
         fnafWorldGame.start();
+    } else if (currentGame.id === 'roblox' && robloxGame) {
+        robloxGame.start();
     }
 }
 
@@ -144,6 +163,8 @@ function pauseCurrentGame() {
         game2048.gameRunning = false;
     } else if (currentGame.id === 'fnafworld' && fnafWorldGame) {
         fnafWorldGame.pause();
+    } else if (currentGame.id === 'roblox' && robloxGame) {
+        robloxGame.pause();
     }
 }
 
@@ -156,6 +177,8 @@ function resumeCurrentGame() {
         game2048.gameRunning = true;
     } else if (currentGame.id === 'fnafworld' && fnafWorldGame) {
         fnafWorldGame.resume();
+    } else if (currentGame.id === 'roblox' && robloxGame) {
+        robloxGame.resume();
     }
 }
 
@@ -233,6 +256,7 @@ function setupModal() {
         if (flappyGame) flappyGame.pause();
         if (game2048) game2048.gameRunning = false;
         if (fnafWorldGame) fnafWorldGame.pause();
+        if (robloxGame) robloxGame.pause();
     }
     
     window.onclick = function(event) {
@@ -242,6 +266,7 @@ function setupModal() {
             if (flappyGame) flappyGame.pause();
             if (game2048) game2048.gameRunning = false;
             if (fnafWorldGame) fnafWorldGame.pause();
+            if (robloxGame) robloxGame.pause();
         }
     }
 }
