@@ -35,6 +35,20 @@ const games = [
             'Try to reach 2048',
             'Use strategy to maximize your score!'
         ]
+    },
+    {
+        id: 'fnafworld',
+        name: 'FNAF World',
+        icon: '🤖',
+        description: 'Five Nights at Freddy\'s - Strategy RPG Battle Game',
+        instructions: [
+            'Press 1-3 to select your character',
+            'Press A to Attack enemies',
+            'Press D to Defend (boost defense)',
+            'Press H to Heal your character',
+            'Defeat all enemies to win!',
+            'Each level gets progressively harder'
+        ]
     }
 ];
 
@@ -42,6 +56,7 @@ let currentGame = null;
 let snakeGame = null;
 let flappyGame = null;
 let game2048 = null;
+let fnafWorldGame = null;
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -100,6 +115,8 @@ function openGame(gameId) {
     } else if (gameId === '2048') {
         game2048 = new Game2048('gameCanvas');
         render2048();
+    } else if (gameId === 'fnafworld') {
+        fnafWorldGame = new FNAFWorldGame('gameCanvas');
     }
     
     modal.style.display = 'block';
@@ -113,6 +130,8 @@ function startCurrentGame() {
     } else if (currentGame.id === '2048' && game2048) {
         game2048.start();
         render2048();
+    } else if (currentGame.id === 'fnafworld' && fnafWorldGame) {
+        fnafWorldGame.start();
     }
 }
 
@@ -123,6 +142,8 @@ function pauseCurrentGame() {
         flappyGame.pause();
     } else if (currentGame.id === '2048' && game2048) {
         game2048.gameRunning = false;
+    } else if (currentGame.id === 'fnafworld' && fnafWorldGame) {
+        fnafWorldGame.pause();
     }
 }
 
@@ -133,6 +154,8 @@ function resumeCurrentGame() {
         flappyGame.resume();
     } else if (currentGame.id === '2048' && game2048) {
         game2048.gameRunning = true;
+    } else if (currentGame.id === 'fnafworld' && fnafWorldGame) {
+        fnafWorldGame.resume();
     }
 }
 
@@ -209,6 +232,7 @@ function setupModal() {
         if (snakeGame) snakeGame.pause();
         if (flappyGame) flappyGame.pause();
         if (game2048) game2048.gameRunning = false;
+        if (fnafWorldGame) fnafWorldGame.pause();
     }
     
     window.onclick = function(event) {
@@ -217,6 +241,7 @@ function setupModal() {
             if (snakeGame) snakeGame.pause();
             if (flappyGame) flappyGame.pause();
             if (game2048) game2048.gameRunning = false;
+            if (fnafWorldGame) fnafWorldGame.pause();
         }
     }
 }
