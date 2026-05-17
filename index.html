@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblock Games - Play Free Games Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <h1 class="logo">🎮 Unblock Games</h1>
+            <p class="tagline">Play anytime, anywhere</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search games...">
+        </div>
+
+        <div class="game-grid" id="gameGrid">
+            <!-- Games will be loaded here -->
+        </div>
+    </div>
+
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="gameTitle"></h2>
+            <div id="gameContainer"></div>
+        </div>
+    </div>
+
+    <script src="js/games/snake.js"></script>
+    <script src="js/games/flappy.js"></script>
+    <script src="js/games/twentyfortyeight.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
